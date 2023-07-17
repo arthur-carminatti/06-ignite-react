@@ -37,7 +37,16 @@ export function PrismaAdapter(): Adapter {
                 avatar_url: user.avatar_url!
             }
         },
-        async getUserByAccount({ providerAccountId, provider }) { },
+        async getUserByAccount({ providerAccountId, provider }) {
+            const account = await prisma.account.findFirstOrThrow({
+                where: {
+                    provider_provider_account_id: {
+                        provider,
+                        provider_account_id: providerAccountId
+                    }
+                }
+            })
+        },
         async updateUser(user) { },
         async deleteUser(userId) { },
         async linkAccount(account) { },
