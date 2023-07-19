@@ -69,7 +69,7 @@ export default function Register() {
 
             <Form as="form" onSubmit={handleSubmit(handleRegister)}>
                 <label>
-                    <Text size="sm"> Nome de usuário</Text>
+                    <Text size="sm">Nome de usuário</Text>
                     <TextInput prefix="ignite.com/" placeholder="seu-suário" {...register('username')} />
 
                     {errors.username && (
@@ -78,7 +78,7 @@ export default function Register() {
                 </label>
 
                 <label>
-                    <Text size="sm"> Nome completo</Text>
+                    <Text size="sm">Nome completo</Text>
                     <TextInput placeholder="Seu nome" {...register('name')} />
 
                     {errors.name && (
